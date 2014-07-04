@@ -1,2 +1,1 @@
-sandbox-golang
-==============
+# sandbox-go
