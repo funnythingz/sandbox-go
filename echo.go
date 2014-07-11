@@ -16,7 +16,7 @@ func main() {
 
     flag.Parse()
 
-    var s string = ""
+    var s string
 
     for i := 0; i < flag.NArg(); i++ {
         if i > 0 {
