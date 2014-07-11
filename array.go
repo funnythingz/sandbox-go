@@ -19,4 +19,10 @@ func main() {
     for i := 0; i < len(arrayOfString); i++ {
         fmt.Println(arrayOfString[i])
     }
+
+    // forEachみたいな感じ
+    for i, v := range arrayOfString {
+        fmt.Println(i)
+        fmt.Println(v)
+    }
 }
