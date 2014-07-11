@@ -6,6 +6,7 @@ import(
 )
 
 func main() {
+
     var arrayOfString [3]string
 
     for i := 0; i < 3; i++ {
@@ -14,4 +15,8 @@ func main() {
 
     fmt.Println(arrayOfString[0])
     fmt.Println(arrayOfString)
+
+    for i := 0; i < len(arrayOfString); i++ {
+        fmt.Println(arrayOfString[i])
+    }
 }
