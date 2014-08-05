@@ -3,6 +3,10 @@
 {{define "body"}}
 <h1>{{.Title}}</h1>
 <article>
-  {{.Body|safehtml}}
+    <ul>
+    {{range .Body}}
+        <li>{{.}}</li>
+    {{end}}
+    </ul>
 </article>
 {{end}}

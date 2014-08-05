@@ -7,7 +7,7 @@ import (
 
 type Dat struct {
     Title string
-    Body string
+    Body []string
 }
 
 func viewHandler(w http.ResponseWriter, r *http.Request) {
@@ -21,7 +21,8 @@ func viewHandler(w http.ResponseWriter, r *http.Request) {
 
     dat := Dat{
         Title: "ほげやん",
-        Body: "ほげではない。"}
+        Body: []string{"1: ほげではない。", "2: ほげではない。"},
+    }
 
     err := templates.ExecuteTemplate(w, "layout", dat)
 
