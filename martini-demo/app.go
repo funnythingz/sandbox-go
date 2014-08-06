@@ -6,7 +6,7 @@ import(
     "./Layout"
 )
 
-func controller() {
+func app() {
 
     m := martini.Classic()
 
@@ -27,5 +27,5 @@ func controller() {
 }
 
 func main() {
-    controller()
+    app()
 }
