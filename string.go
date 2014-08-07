@@ -6,6 +6,7 @@ import(
 )
 
 func main() {
+
     s := "hello"
 
     if s[1] != 'e' {
@@ -24,4 +25,5 @@ func main() {
 
     fmt.Println(*p)
     fmt.Println(s)
+
 }
