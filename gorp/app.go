@@ -40,4 +40,10 @@ func main() {
         person := val.(*Person)
         fmt.Printf("%d, %s\n", person.Id, person.Name)
     }
+
+    obj, _ := dbmap.Get(Person{}, 1)
+    person := obj.(*Person)
+
+    fmt.Println(person.Name)
+
 }
