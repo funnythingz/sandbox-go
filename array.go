@@ -25,4 +25,9 @@ func main() {
         fmt.Println(i)
         fmt.Println(v)
     }
+
+    // key を使わない場合
+    for _, v := range arrayOfString {
+        fmt.Println(v)
+    }
 }
