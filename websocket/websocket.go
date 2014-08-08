@@ -76,6 +76,10 @@ func WebSocket(w http.ResponseWriter, r *http.Request) {
 
         broadcastMessage(messageType, p)
         log.Println(ByteToStr(p))
+
+        InsertEntry(ByteToStr(p))
+        log.Println(GetEntryAll())
+
     }
 
 }

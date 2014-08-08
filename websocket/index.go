@@ -5,5 +5,5 @@ import(
 )
 
 func Index(r render.Render) {
-    r.HTML(200, "index", []string{"hoge", "ahya"})
+    r.HTML(200, "index", GetEntryAll())
 }

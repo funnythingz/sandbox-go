@@ -7,6 +7,8 @@ import(
 
 func main() {
 
+    initDB()
+
     m := martini.Classic()
 
     m.Use(render.Renderer(render.Options{
