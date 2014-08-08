@@ -1,4 +1,4 @@
-$(function() {
+var App = function() {
 
     var webSocket = new WebSocket('ws://localhost:3000/ws');
 
@@ -6,11 +6,11 @@ $(function() {
 
         webSocket.onmessage = function(response) {
 
-            console.log(response.data);
+            console.log(response);
 
             var message = $('<li class="list-group-item">').text(response.data);
 
-            $('#messages').append(message);
+            $('#messages').prepend(message);
             $('#inputMessage').val('');
         }
 
@@ -25,4 +25,9 @@ $(function() {
         });
 
     }
+
+}
+
+$(function() {
+    new App();
 });

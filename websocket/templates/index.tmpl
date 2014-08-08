@@ -14,6 +14,10 @@
         </fieldset>
     </form>
 
-    <ul id="messages" class="list-group"></ul>
+    <ul id="messages" class="list-group">
+        {{range .}}
+        <li class="list-group-item">{{.}}</li>
+        {{end}}
+    </ul>
 
 </div>
