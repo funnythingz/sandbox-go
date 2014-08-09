@@ -1,23 +1,30 @@
 <div class="container">
 
+  <div class="page-header">
     <form class="form-horizontal" id="form">
-        <fieldset>
+      <fieldset>
+        <div class="row">
+          <div class="col-md-9">
             <div class="form-group">
-                <label for="inputMessage" class="col-md-2 control-label">Message</label>
-                <div class="col-md-7 form-group">
-                    <input type="text" class="form-control" id="inputMessage" placeholder="new message">
-                </div>
-                <div class="col-md-3 form-group text-right">
-                    <button type="submit" class="btn btn-primary">Post Message</button>
-                </div>
+              <input type="text" class="form-control" id="inputMessage" placeholder="new message">
             </div>
-        </fieldset>
+          </div>
+          <div class="col-md-2 col-md-offset-1">
+            <div class="form-group">
+              <button type="submit" class="btn btn-block btn-primary">Post Message</button>
+            </div>
+          </div>
+        </div>
+      </fieldset>
     </form>
+  </div>
 
+  <div class="row">
     <ul id="messages" class="list-group">
-        {{range .}}
-        <li class="list-group-item">{{.}}</li>
-        {{end}}
+      {{range .}}
+      <li class="list-group-item">{{.}}</li>
+      {{end}}
     </ul>
+  </div>
 
 </div>
