@@ -22,7 +22,16 @@
   <div class="row">
     <ul id="messages" class="list-group">
       {{range .}}
-      <li class="list-group-item">{{.}}</li>
+      <li class="list-group-item" data-id="{{.CreateAt}}">
+        <div class="flex">
+          <div class="-item">
+            {{.Message}}
+          </div>
+          <div class="-item-icon48 text-right">
+            <button class="btn btn-block btn-default btn-sm delete-entry" data-method="delete" data-id="{{.CreateAt}}"><span class="glyphicon glyphicon-remove"></span></button>
+          </div>
+        </div>
+      </li>
       {{end}}
     </ul>
   </div>
