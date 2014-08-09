@@ -86,7 +86,9 @@ func WebSocket(w http.ResponseWriter, r *http.Request) {
 		log.Println(_type)
 
 		if reflect.DeepEqual(_type, "new") {
-			InsertEntry(ByteToStr(p))
+			var _data string
+			scan.ScanJSON(strings.NewReader(ByteToStr(p)), "/data", &_data)
+			InsertEntry(_data)
 		}
 
 		log.Println(GetEntryAll())
