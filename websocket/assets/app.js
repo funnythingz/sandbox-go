@@ -5,21 +5,7 @@ var App = function() {
     webSocket.onopen = function() {
 
         webSocket.onmessage = function(response) {
-
-            console.log(response);
-            var deleteObj = JSON.parse(response.data);
-            console.log(deleteObj);
-
-            if(_.isEqual(deleteObj.type, 'delete')) {
-                console.log('.list-group-item[data-id="' + deleteObj.data + '"]');
-                var $el = $('.list-group-item[data-id="' + deleteObj.data + '"]');
-                $el.remove();
-            } else {
-                var message = $('<li class="list-group-item">').text(response.data);
-
-                $('#messages').prepend(message);
-                $('#inputMessage').val('');
-            }
+            location.href = '/';
         }
 
         $('#form').on('submit', function(e) {
@@ -48,7 +34,6 @@ var App = function() {
             });
 
             promise.done(function() {
-                console.log(data);
                 webSocket.send(JSON.stringify({type: 'delete', data: data}));
             });
 
