@@ -1,15 +1,24 @@
 package main
 
 import (
-    "github.com/codegangsta/negroni"
     "net/http"
-    "log"
+    _ "log"
+    "github.com/codegangsta/negroni"
+    "github.com/unrolled/render"
 )
 
+type Header struct {
+    Title string
+    Lead string
+}
+
 func main() {
+
+    r := render.New(render.Options{})
+
     mux := http.NewServeMux()
     mux.HandleFunc("/", func(w http.ResponseWriter, req *http.Request) {
-        log.Println(w)
+        r.HTML(w, http.StatusOK, "index", &Header{"Hello", "world"})
     })
 
     n := negroni.Classic()
