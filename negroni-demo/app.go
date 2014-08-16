@@ -1,10 +1,11 @@
 package main
 
 import (
-	"github.com/codegangsta/negroni"
-	"github.com/unrolled/render"
 	_ "log"
 	"net/http"
+
+	"github.com/codegangsta/negroni"
+	"github.com/unrolled/render"
 )
 
 type Header struct {

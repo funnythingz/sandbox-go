@@ -1,18 +1,19 @@
 package main
 
 import (
-    "fmt"
-    "github.com/go-martini/martini"
-    "github.com/martini-contrib/acceptlang"
-    "net/http"
+	"fmt"
+	"net/http"
+
+	"github.com/go-martini/martini"
+	"github.com/martini-contrib/acceptlang"
 )
 
 func main() {
-    m := martini.Classic()
+	m := martini.Classic()
 
-    m.Get("/", acceptlang.Languages(), func(languages acceptlang.AcceptLanguages) string {
-        return fmt.Sprintf("Languages: %s", languages)
-    })
+	m.Get("/", acceptlang.Languages(), func(languages acceptlang.AcceptLanguages) string {
+		return fmt.Sprintf("Languages: %s", languages)
+	})
 
-    http.ListenAndServe(":8090", m)
+	http.ListenAndServe(":8090", m)
 }

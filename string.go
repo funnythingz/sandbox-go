@@ -1,29 +1,29 @@
 package main
 
-import(
-    "fmt"
-    "os"
+import (
+	"fmt"
+	"os"
 )
 
 func main() {
 
-    s := "hello"
+	s := "hello"
 
-    if s[1] != 'e' {
-        os.Exit(1)
-    }
+	if s[1] != 'e' {
+		os.Exit(1)
+	}
 
-    fmt.Println(s)
+	fmt.Println(s)
 
-    s = "good bye"
+	s = "good bye"
 
-    fmt.Println(s)
+	fmt.Println(s)
 
-    var p *string = &s
+	var p *string = &s
 
-    *p = "hoge"
+	*p = "hoge"
 
-    fmt.Println(*p)
-    fmt.Println(s)
+	fmt.Println(*p)
+	fmt.Println(s)
 
 }

@@ -1,12 +1,12 @@
 package main
 
-import(
-    "bytes"
+import (
+	"bytes"
 )
 
 func ByteToStr(b []byte) string {
 
-    buffer := bytes.NewBuffer(b)
+	buffer := bytes.NewBuffer(b)
 
-    return buffer.String()
+	return buffer.String()
 }

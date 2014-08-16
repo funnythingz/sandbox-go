@@ -2,12 +2,13 @@ package main
 
 import (
 	"database/sql"
+	"log"
+	"time"
+
 	"github.com/coopernurse/gorp"
 	"github.com/go-martini/martini"
 	"github.com/martini-contrib/render"
 	_ "github.com/mattn/go-sqlite3"
-	"log"
-	"time"
 )
 
 type Entry struct {

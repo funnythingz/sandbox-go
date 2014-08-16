@@ -3,27 +3,27 @@ package main
 import "fmt"
 
 func main() {
-    helloKeitan()
-    goodDayKeitan()
-    smoothLoop()
+	helloKeitan()
+	goodDayKeitan()
+	smoothLoop()
 }
 
 func helloKeitan() {
-    keitan := "こんにちは！けいたん"
-    fmt.Println(keitan)
+	keitan := "こんにちは！けいたん"
+	fmt.Println(keitan)
 }
 
 func goodDayKeitan() {
-    keitan := "良い日だね！けいたん"
-    fmt.Println(keitan)
+	keitan := "良い日だね！けいたん"
+	fmt.Println(keitan)
 }
 
 func smoothLoop() {
 
-    smooth := []string {"keitan", "ipe", "hrtn?"}
+	smooth := []string{"keitan", "ipe", "hrtn?"}
 
-    for _, v := range smooth {
-        fmt.Println(v)
-    }
+	for _, v := range smooth {
+		fmt.Println(v)
+	}
 
 }
