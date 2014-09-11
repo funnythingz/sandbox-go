@@ -25,5 +25,5 @@ func (b *Body) SizeH() float64 {
 // main
 func main() {
     b := &Body{90, 55, 70}
-    fmt.Println(b)
+    fmt.Println(b, b.SizeB())
 }
