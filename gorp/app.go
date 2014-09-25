@@ -43,6 +43,7 @@ func main() {
 	}
 
 	obj, _ := dbmap.Get(Person{}, 1)
+	fmt.Println(obj)
 	person := obj.(*Person)
 
 	fmt.Println(person.Name)
