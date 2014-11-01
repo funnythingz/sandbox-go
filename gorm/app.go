@@ -49,7 +49,7 @@ func main() {
 
 func DbInit() {
 
-	DbMap, _ = gorm.Open("sqlite3", "test.db")
+    DbMap, _ = gorm.Open("mysql", "hoge:hoge@/gorm_develop?charset=utf8&parseTime=True")
 
 	DbMap.DB()
 
