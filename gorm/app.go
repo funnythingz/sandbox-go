@@ -7,6 +7,8 @@ import (
 	"github.com/jinzhu/gorm"
 	_ "github.com/lib/pq"
 	_ "github.com/mattn/go-sqlite3"
+
+    "github.com/manveru/faker"
 )
 
 type Person struct {
@@ -18,9 +20,13 @@ var DbMap gorm.DB
 
 func main() {
 
-	DbInit()
+    fake, _ := faker.New("en")
 
-	person := Person{Name: "hoge"}
+	DbInit()
+	//Migrate()
+
+	person := Person{Name: fake.Name()}
+
 	log.Println(DbMap.NewRecord(person))
 	log.Println(DbMap.Create(&person))
 	log.Println(DbMap.NewRecord(person))
@@ -28,6 +34,16 @@ func main() {
 
 	log.Println("first")
 	log.Println(DbMap.First(&person))
+	log.Println(person)
+
+    var persons []Person
+    DbMap.Find(&persons)
+
+	log.Println(persons)
+
+    for k, v := range persons {
+        log.Println(k, v.Name)
+    }
 
 }
 
@@ -42,8 +58,6 @@ func DbInit() {
 	DbMap.DB().SetMaxOpenConns(100)
 
 	DbMap.SingularTable(true)
-
-	Migrate()
 
 }
 
