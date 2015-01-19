@@ -21,7 +21,7 @@ func main() {
 
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", func(w http.ResponseWriter, req *http.Request) {
-		r.HTML(w, http.StatusOK, "index", &Header{"Hello", "world"})
+		r.HTML(w, http.StatusOK, "index", &Header{"Yeah", "Hello world"})
 	})
 
 	n := negroni.Classic()
