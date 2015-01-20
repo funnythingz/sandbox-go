@@ -10,8 +10,8 @@ type T struct {
 }
 
 type Vertex struct {
-    X int
-    Y int
+	X int
+	Y int
 }
 
 func main() {
@@ -21,8 +21,8 @@ func main() {
 	}
 	log.Println(t)
 
-    v := Vertex{1, 2}
-    log.Println(v)
-    log.Println(v.X)
-    log.Println(v.Y)
+	v := Vertex{1, 2}
+	log.Println(v)
+	log.Println(v.X)
+	log.Println(v.Y)
 }
