@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-type Dat struct {
+type Data struct {
 	Title string
 	Body  []string
 }
@@ -19,12 +19,12 @@ func viewHandler(w http.ResponseWriter, r *http.Request) {
 
 	templates := template.Must(template.New("").Funcs(funcMap).ParseFiles("templates/layout.html", "templates/view.html"))
 
-	dat := Dat{
+	data := Data{
 		Title: "ほげやん",
 		Body:  []string{"1: ほげではない。", "2: ほげではない。"},
 	}
 
-	err := templates.ExecuteTemplate(w, "layout", dat)
+	err := templates.ExecuteTemplate(w, "layout", data)
 
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -34,5 +34,5 @@ func viewHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/", viewHandler)
-	http.ListenAndServe(":8888", nil)
+	http.ListenAndServe(":3000", nil)
 }

@@ -8,7 +8,7 @@ import (
 	_ "github.com/lib/pq"
 	_ "github.com/mattn/go-sqlite3"
 
-    "github.com/manveru/faker"
+	"github.com/manveru/faker"
 )
 
 type Person struct {
@@ -20,7 +20,7 @@ var DbMap gorm.DB
 
 func main() {
 
-    fake, _ := faker.New("en")
+	fake, _ := faker.New("en")
 
 	DbInit()
 	//Migrate()
@@ -36,20 +36,20 @@ func main() {
 	log.Println(DbMap.First(&person))
 	log.Println(person)
 
-    var persons []Person
-    DbMap.Find(&persons)
+	var persons []Person
+	DbMap.Find(&persons)
 
 	log.Println(persons)
 
-    for k, v := range persons {
-        log.Println(k, v.Name)
-    }
+	for k, v := range persons {
+		log.Println(k, v.Name)
+	}
 
 }
 
 func DbInit() {
 
-    DbMap, _ = gorm.Open("mysql", "hoge:hoge@/gorm_develop?charset=utf8&parseTime=True")
+	DbMap, _ = gorm.Open("mysql", "hoge:hoge@/gorm_develop?charset=utf8&parseTime=True")
 
 	DbMap.DB()
 
