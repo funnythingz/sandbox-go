@@ -1,18 +1,20 @@
 package main
 
-import "log"
+import (
+	"log"
+)
 
 func split(sum int) (x, y int) {
-    x = sum * 4 / 9
-    y = sum - x
-    return
+	x = sum * 4 / 9
+	y = sum - x
+	return
 }
 
 func main() {
 
-    x, y := split(17)
+	x, y := split(17)
 
-    log.Println(x)
-    log.Println(y)
+	log.Println(x)
+	log.Println(y)
 
 }

@@ -1,25 +1,27 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type Human struct {
-    Name string
+	Name string
 }
 
 type Organization struct {
-    Members []Human
+	Members []Human
 }
 
 func main() {
 
-    yamada := Human{Name: "yamada"}
-    tanaka := Human{Name: "tanaka"}
+	yamada := Human{Name: "yamada"}
+	tanaka := Human{Name: "tanaka"}
 
-    humans :=[]Human{yamada, tanaka}
+	humans := []Human{yamada, tanaka}
 
-    fmt.Println(humans)
+	fmt.Println(humans)
 
-    organization := Organization{Members: humans}
-    fmt.Println(organization)
+	organization := Organization{Members: humans}
+	fmt.Println(organization)
 
 }

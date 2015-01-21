@@ -25,3 +25,5 @@ _testmain.go
 gin-bin
 
 .DS_Store
+*.swp
+tmp
