@@ -8,8 +8,13 @@ import (
 )
 
 func main() {
-	goji.Get("/hello/:id", hello)
+	goji.Get("/", welcome)
+	goji.Get("/:id", hello)
 	goji.Serve()
+}
+
+func welcome(c web.C, w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "Welcome")
 }
 
 func hello(c web.C, w http.ResponseWriter, r *http.Request) {
