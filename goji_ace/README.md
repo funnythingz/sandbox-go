@@ -1,6 +1,6 @@
 # try goji
 
-access to `http://localhost:8000/hello/unko`
+access to `http://localhost:8000/unko`
 
 response from
 
