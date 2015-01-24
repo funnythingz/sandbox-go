@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"github.com/yosssi/ace"
 	"github.com/zenazn/goji"
 	"github.com/zenazn/goji/web"
@@ -29,5 +28,16 @@ func root(c web.C, w http.ResponseWriter, r *http.Request) {
 }
 
 func hello(c web.C, w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello, %s!", c.URLParams["id"])
+	tpl, err := ace.Load("layout", "content", nil)
+
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	title := "This id is `" + c.URLParams["id"] + "`"
+	if err := tpl.Execute(w, map[string]string{"Title": title}); err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
 }
