@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/russross/blackfriday"
-	_ "io/ioutil"
+	"io/ioutil"
 )
 
 func check(e error) {
@@ -13,8 +13,8 @@ func check(e error) {
 }
 
 func main() {
-	//md, err := ioutil.ReadFile("hoge.md")
-	//check(err)
-	output := blackfriday.MarkdownCommon([]byte("# hoge"))
+	md, err := ioutil.ReadFile("hoge.md")
+	check(err)
+	output := blackfriday.MarkdownCommon([]byte(md))
 	fmt.Println(string(output))
 }
