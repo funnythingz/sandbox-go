@@ -2,6 +2,7 @@ package main
 
 import (
 	"./db"
+	"./models"
 	"github.com/manveru/faker"
 	"log"
 )
@@ -16,7 +17,7 @@ func main() {
 	dbmap.DBConfiguer()
 	fake, _ := faker.New("en")
 
-	person := Person{Name: fake.Name()}
+	person := model.Person{Name: fake.Name()}
 
 	log.Println(dbmap.DB.NewRecord(person))
 	log.Println(dbmap.DB.Create(&person))

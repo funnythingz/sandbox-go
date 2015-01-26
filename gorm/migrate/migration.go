@@ -2,15 +2,8 @@ package main
 
 import (
 	"../db"
-	"github.com/jinzhu/gorm"
+	"../models"
 )
-
-type Person struct {
-	Id   int64
-	Name string
-}
-
-var DbMap gorm.DB
 
 func main() {
 	dbmap.DBConfiguer()
@@ -18,9 +11,9 @@ func main() {
 }
 
 func DBMigrate() {
-	dbmap.DB.DropTableIfExists(&Person{})
-	dbmap.DB.CreateTable(&Person{})
-	dbmap.DB.AutoMigrate(&Person{})
+	dbmap.DB.DropTableIfExists(&model.Person{})
+	dbmap.DB.CreateTable(&model.Person{})
+	dbmap.DB.AutoMigrate(&model.Person{})
 
-	dbmap.DB.Model(&Person{}).AddIndex("idx_person_name", "name")
+	dbmap.DB.Model(&model.Person{}).AddIndex("idx_person_name", "name")
 }
