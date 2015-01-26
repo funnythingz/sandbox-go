@@ -35,7 +35,7 @@ func hello(c web.C, w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if err := tpl.Execute(w, map[string]string{"Title": "Hello, " + c.URLParams["id"] + "!"}); err != nil {
+	if err := tpl.Execute(w, map[string]string{"Title": "Yeah, " + c.URLParams["id"] + "!"}); err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
