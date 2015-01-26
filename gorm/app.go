@@ -1,14 +1,9 @@
 package main
 
 import (
-	"log"
-
-	_ "github.com/go-sql-driver/mysql"
-	"github.com/jinzhu/gorm"
-	_ "github.com/lib/pq"
-	_ "github.com/mattn/go-sqlite3"
-
+	"./db"
 	"github.com/manveru/faker"
+	"log"
 )
 
 type Person struct {
@@ -16,28 +11,24 @@ type Person struct {
 	Name string
 }
 
-var DbMap gorm.DB
-
 func main() {
 
+	dbmap.DBConfiguer()
 	fake, _ := faker.New("en")
-
-	DbInit()
-	//Migrate()
 
 	person := Person{Name: fake.Name()}
 
-	log.Println(DbMap.NewRecord(person))
-	log.Println(DbMap.Create(&person))
-	log.Println(DbMap.NewRecord(person))
-	log.Println(DbMap.Save(&person))
+	log.Println(dbmap.DB.NewRecord(person))
+	log.Println(dbmap.DB.Create(&person))
+	log.Println(dbmap.DB.NewRecord(person))
+	log.Println(dbmap.DB.Save(&person))
 
 	log.Println("first")
-	log.Println(DbMap.First(&person))
+	log.Println(dbmap.DB.First(&person))
 	log.Println(person)
 
 	var persons []Person
-	DbMap.Find(&persons)
+	dbmap.DB.Find(&persons)
 
 	log.Println(persons)
 
@@ -45,27 +36,4 @@ func main() {
 		log.Println(k, v.Name)
 	}
 
-}
-
-func DbInit() {
-
-	DbMap, _ = gorm.Open("mysql", "hoge:hoge@/gorm_develop?charset=utf8&parseTime=True")
-
-	DbMap.DB()
-
-	DbMap.DB().Ping()
-	DbMap.DB().SetMaxIdleConns(10)
-	DbMap.DB().SetMaxOpenConns(100)
-
-	DbMap.SingularTable(true)
-
-}
-
-func Migrate() {
-	DbMap.CreateTable(&Person{})
-	DbMap.DropTable(&Person{})
-	DbMap.DropTableIfExists(&Person{})
-	DbMap.AutoMigrate(&Person{})
-
-	DbMap.Model(&Person{}).AddIndex("idx_person_name", "name")
 }
