@@ -7,11 +7,6 @@ import (
 	"log"
 )
 
-type Person struct {
-	Id   int64
-	Name string
-}
-
 func main() {
 
 	dbmap.DBConfiguer()
@@ -28,7 +23,7 @@ func main() {
 	log.Println(dbmap.DB.First(&person))
 	log.Println(person)
 
-	var persons []Person
+	var persons []model.Person
 	dbmap.DB.Find(&persons)
 
 	log.Println(persons)
