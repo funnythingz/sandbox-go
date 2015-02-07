@@ -9,6 +9,7 @@ import (
 
 func main() {
 	goji.Get("/", root)
+	goji.Post("/unko", unko)
 	goji.Get("/:id", hello)
 	goji.Serve()
 }
@@ -39,4 +40,8 @@ func hello(c web.C, w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
+}
+
+func unko(c web.C, w http.ResponseWriter, r *http.Request) {
+	http.Redirect(w, r, "/", http.StatusMovedPermanently)
 }
