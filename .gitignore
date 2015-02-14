@@ -23,6 +23,7 @@ _testmain.go
 *.test
 
 gin-bin
+_vendor
 
 .DS_Store
 *.swp
