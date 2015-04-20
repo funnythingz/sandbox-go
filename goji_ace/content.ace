@@ -1,6 +1,0 @@
-= content main
-  h1
-    | {{.Title}}
-
-  form action="/unko" method="post"
-    input type="submit" value="submit"
