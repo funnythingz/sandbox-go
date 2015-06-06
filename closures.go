@@ -1,6 +1,6 @@
 package main
 
-import "log"
+import "fmt"
 
 func sayMessage() func(string) string {
 
@@ -12,5 +12,5 @@ func sayMessage() func(string) string {
 func main() {
 
 	say := sayMessage()
-	log.Println(say("test"))
+	fmt.Println(say("test"))
 }
