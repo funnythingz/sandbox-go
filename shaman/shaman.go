@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(shaman.Sha1hash("unko"))
+	fmt.Println(shaman.Sha1hash("iroiro"))
 }
