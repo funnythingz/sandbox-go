@@ -8,7 +8,7 @@ import (
 var DB gorm.DB
 
 func DBConfiguer() {
-	DB, _ = gorm.Open("mysql", "hoge:hoge@/gorm_develop?charset=utf8&parseTime=True")
+	DB, _ = gorm.Open("mysql", "root:root@/test?charset=utf8&parseTime=True")
 
 	DB.DB()
 
@@ -17,4 +17,5 @@ func DBConfiguer() {
 	DB.DB().SetMaxOpenConns(100)
 
 	DB.SingularTable(true)
+	DB.LogMode(true)
 }

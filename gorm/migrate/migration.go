@@ -11,9 +11,7 @@ func main() {
 }
 
 func DBMigrate() {
-	dbmap.DB.DropTableIfExists(&model.Person{})
-	dbmap.DB.CreateTable(&model.Person{})
-	dbmap.DB.AutoMigrate(&model.Person{})
-
-	dbmap.DB.Model(&model.Person{}).AddIndex("idx_person_name", "name")
+	//dbmap.DB.DropTableIfExists(&models.Person{})
+	//dbmap.DB.CreateTable(&models.Person{})
+	dbmap.DB.AutoMigrate(&models.Person{})
 }
