@@ -13,7 +13,7 @@ func main() {
 
 	dbmap.DB.First(&person)
 	pp.Println(person)
-	person.Name = "unko"
+	person.Name = "ほげ"
 
 	dbmap.DB.Model(&models.Person{}).Update(&person)
 
