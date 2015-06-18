@@ -1,6 +1,8 @@
 package main
 
-import ()
+import (
+	"github.com/k0kubun/pp"
+)
 
 func main() {
 
@@ -8,6 +10,8 @@ func main() {
 
 	animals = append(animals, Dog{Name: "pochi"})
 	animals = append(animals, Cat{Name: "mike"})
+
+	pp.Println(animals)
 }
 
 type Animal interface {
