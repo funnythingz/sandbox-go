@@ -24,9 +24,7 @@ func viewHandler(w http.ResponseWriter, r *http.Request) {
 		Body:  []string{"1: ほげではない。", "2: ほげではない。"},
 	}
 
-	err := templates.ExecuteTemplate(w, "layout", data)
-
-	if err != nil {
+	if err := templates.ExecuteTemplate(w, "layout", data); err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 
