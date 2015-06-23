@@ -18,10 +18,15 @@ func main() {
 
 type Animal interface {
 	GetName() string
+	SetName(name string)
 }
 
 type Dog struct {
 	Name string
+}
+
+func (a *Dog) SetName(name string) {
+	a.Name = name
 }
 
 func (a *Dog) GetName() string {
@@ -30,6 +35,10 @@ func (a *Dog) GetName() string {
 
 type Cat struct {
 	Name string
+}
+
+func (a *Cat) SetName(name string) {
+	a.Name = name
 }
 
 func (a *Cat) GetName() string {
