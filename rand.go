@@ -2,14 +2,15 @@ package main
 
 import (
 	"crypto/rand"
+	"fmt"
 	"math/big"
 	"strconv"
 )
 
 func main() {
-	println(random(16))
-	println(random(16))
-	println(random(16))
+	fmt.Println(random(16))
+	fmt.Println(random(16))
+	fmt.Println(random(16))
 }
 
 func random(length int) string {
