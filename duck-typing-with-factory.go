@@ -8,8 +8,8 @@ func main() {
 
 	var layouts []Layout
 
-	layouts = append(layouts, &TextLayout{Type: "text"})
-	layouts = append(layouts, &MultiMediaLayout{Type: "multimedia"})
+	layouts = append(layouts, CreateLayout("text"))
+	layouts = append(layouts, CreateLayout("multimedia"))
 
 	for _, layout := range layouts {
 		pp.Println(layout.GetType())
@@ -34,4 +34,15 @@ type MultiMediaLayout struct {
 
 func (ml *MultiMediaLayout) GetType() string {
 	return ml.Type
+}
+
+func CreateLayout(typeValue string) Layout {
+	switch {
+	case typeValue == "text":
+		return &TextLayout{Type: "text"}
+	case typeValue == "multimedia":
+		return &MultiMediaLayout{Type: "multimedia"}
+	}
+
+	return &TextLayout{}
 }
