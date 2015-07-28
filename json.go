@@ -2,7 +2,7 @@ package main
 
 import (
 	"encoding/json"
-	"io"
+	"fmt"
 )
 
 type Object struct {
@@ -16,5 +16,5 @@ func main() {
 	o := Object{Name: "unko", Value: "ばりゅー", Memo: "ここはみえないお"}
 
 	response, _ := json.Marshal(o)
-	io.WriteString(string(response))
+	fmt.Println(string(response))
 }
