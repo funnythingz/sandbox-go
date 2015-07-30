@@ -1,0 +1,6 @@
+@charset 'utf8'
+@import 'compass/css3'
+@import 'compass/reset'
+
+body
+  background-color: #f7f8f9
